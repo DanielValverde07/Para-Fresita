@@ -25,10 +25,6 @@
 </head>
 <body>
 
-    <audio id="musica" preload="auto">
-        <source src="https://files.catbox.moe/0y6mca.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="sobre-contenedor" id="sobre" onclick="abrirCarta()">
         <div class="tapa"></div>
         <div class="sobre">
@@ -44,12 +40,8 @@
 
     <script>
         function abrirCarta() {
-            const musica = document.getElementById('musica');
             const sobre = document.getElementById('sobre');
             const guia = document.getElementById('guia');
-
-            // Reproducir música
-            musica.play();
 
             sobre.classList.add('abierto');
             sobre.onclick = null; 
