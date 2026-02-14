@@ -35,7 +35,6 @@
             z-index: 4; 
         }
 
-        /* Texto en la parte inferior izquierda del sobre */
         .destinatario-sobre {
             position: absolute;
             bottom: 15px;
@@ -152,6 +151,10 @@
 </head>
 <body>
 
+    <audio id="musica" loop>
+        <source src="https://www.mboxdrive.com/lamore.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="sobre-contenedor" id="sobre" onclick="abrirCarta()">
         <div class="tapa"></div>
         <div class="sobre">
@@ -169,6 +172,10 @@
         function abrirCarta() {
             const sobre = document.getElementById('sobre');
             const guia = document.getElementById('guia');
+            const musica = document.getElementById('musica');
+
+            // Iniciar música
+            musica.play().catch(e => console.log("Esperando interacción para sonar"));
 
             sobre.classList.add('abierto');
             sobre.onclick = null; 
