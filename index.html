@@ -152,7 +152,7 @@
 <body>
 
     <audio id="musica" loop>
-        <source src="https://www.mboxdrive.com/lamore.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030e.mp3" type="audio/mpeg">
     </audio>
 
     <div class="sobre-contenedor" id="sobre" onclick="abrirCarta()">
@@ -174,8 +174,10 @@
             const guia = document.getElementById('guia');
             const musica = document.getElementById('musica');
 
-            // Iniciar música
-            musica.play().catch(e => console.log("Esperando interacción para sonar"));
+            // Intento de reproducir audio al interactuar
+            musica.play().catch(error => {
+                console.log("El navegador bloqueó el audio inicialmente:", error);
+            });
 
             sobre.classList.add('abierto');
             sobre.onclick = null; 
